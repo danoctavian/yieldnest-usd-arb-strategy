@@ -19,9 +19,9 @@ contract UpgradesTest is BaseIntegrationTest {
     }
 
     function testDeploymentParameters() public {
-        // // Check if the deployment parameters are set correctly
-        assertEq(strategy.symbol(), "ynFlex-USDC-ynRWAx-SPV1");
-        assertEq(strategy.asset(), 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48);
+        // Check if the deployment parameters are set correctly
+        assertEq(strategy.symbol(), "ynFlex-USDC-ynUSDx-ARB1");
+        assertEq(strategy.asset(), 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48); // USDC address
     }
 
     function testRewardsSweeperUpgrade() public {
