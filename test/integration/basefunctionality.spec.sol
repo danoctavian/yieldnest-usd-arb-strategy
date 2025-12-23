@@ -148,8 +148,9 @@ contract BaseFunctionalityTest is BaseIntegrationTest {
         // Perform deposit
         strategy.deposit(depositAmount, DEPOSITOR);
 
-        uint256 withdrawAmount = depositAmount - 1;
+        uint256 adjustment = 0 wei;
 
+        uint256 withdrawAmount = depositAmount - adjustment;
         // Perform withdrawal of the same amount
         strategy.withdraw(withdrawAmount, DEPOSITOR, DEPOSITOR);
 
@@ -163,13 +164,13 @@ contract BaseFunctionalityTest is BaseIntegrationTest {
         // Assert that totalAssets before and after are the same
         assertEq(
             totalAssetsAfter,
-            totalAssetsBefore + 1,
+            totalAssetsBefore + adjustment,
             "Total assets should be the same before and after deposit/withdrawal roundtrip"
         );
 
         // Assert that the depositor's share balance is now zero
         uint256 depositorSharesAfter = strategy.balanceOf(DEPOSITOR);
-        assertEq(depositorSharesAfter, 0, "Depositor should have zero shares after withdrawal");
+        assertEq(depositorSharesAfter, adjustment, "Depositor should have zero shares after withdrawal");
 
         // Assert that the depositor's asset balance is back to the original amount
         uint256 depositorAssetAfter = asset.balanceOf(DEPOSITOR);
@@ -179,7 +180,7 @@ contract BaseFunctionalityTest is BaseIntegrationTest {
 
         // Assert that total supply decreased by exactly the shares that were burned
         uint256 totalSupplyAfter = strategy.totalSupply();
-        assertEq(totalSupplyAfter, initialTotalSupply, "Total supply should be initial after complete withdrawal");
+        assertEq(totalSupplyAfter - adjustment, initialTotalSupply, "Total supply should be initial after complete withdrawal");
     }
 
     function test_deposit_and_inject_rewards_with_rewards_sweeper() public {

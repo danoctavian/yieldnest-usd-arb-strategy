@@ -22,6 +22,16 @@ contract BaseIntegrationTest is Test {
         deployment = new DeployStrategy();
         DeployStrategy(address(deployment)).run();
 
+        // INSERT_YOUR_CODE
+
+        // Approve strategy to spend unlimited funds from the SAFE
+        address safe = deployment.safe();
+        address baseAsset = deployment.baseAsset();
+        vm.startPrank(safe);
+        IERC20(baseAsset).approve(address(deployment.accountingModule()), type(uint256).max);
+        vm.stopPrank();
+
+
         // deployment = new VerifyStrategy();
         // VerifyStrategy(address(deployment)).run();
 
