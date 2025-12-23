@@ -39,7 +39,7 @@ contract DeployStrategy is DeployFlexStrategy {
                 allocators: _allocators,
                 safe: _actors.SAFE(),
                 alwaysComputeTotalAssets: true,
-                useRewardsSweeper: true
+                useRewardsSweeper: false
             })
         );
     }
