@@ -31,7 +31,6 @@ contract BaseIntegrationTest is Test {
         IERC20(baseAsset).approve(address(deployment.accountingModule()), type(uint256).max);
         vm.stopPrank();
 
-
         // deployment = new VerifyStrategy();
         // VerifyStrategy(address(deployment)).run();
 

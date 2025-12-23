@@ -26,7 +26,9 @@ contract VaultMainnetUpgradeTest is BaseIntegrationTest {
             uint256 previewRedeem = strategy.previewRedeem(testAmount);
 
             assertGt(previewDeposit, 0, "Preview deposit should return shares");
-            assertApproxEqAbs(previewMint, previewDeposit, 1e6, "Preview mint should be approximately equal to deposit shares");
+            assertApproxEqAbs(
+                previewMint, previewDeposit, 1e6, "Preview mint should be approximately equal to deposit shares"
+            );
             assertGt(previewWithdraw, 0, "Preview withdraw should return shares needed");
             assertApproxEqAbs(
                 previewRedeem, testAmount, 1e6, "Preview redeem should be approximately equal to test amount"

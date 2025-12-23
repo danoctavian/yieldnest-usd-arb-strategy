@@ -180,7 +180,11 @@ contract BaseFunctionalityTest is BaseIntegrationTest {
 
         // Assert that total supply decreased by exactly the shares that were burned
         uint256 totalSupplyAfter = strategy.totalSupply();
-        assertEq(totalSupplyAfter - adjustment, initialTotalSupply, "Total supply should be initial after complete withdrawal");
+        assertEq(
+            totalSupplyAfter - adjustment,
+            initialTotalSupply,
+            "Total supply should be initial after complete withdrawal"
+        );
     }
 
     function test_deposit_and_inject_rewards_with_rewards_sweeper() public {
