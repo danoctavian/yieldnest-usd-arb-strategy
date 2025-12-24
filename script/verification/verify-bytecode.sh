@@ -13,14 +13,10 @@ STRATEGY_NAME=$(basename "$DEPLOYMENT_FILE" .json | sed 's/-[^-]*$//')
 ACCOUNTING_MODULE_ADDRESS=$(jq -r ".\"${STRATEGY_NAME}-accountingModule-implementation\"" "$DEPLOYMENT_FILE")
 ACCOUNTING_TOKEN_ADDRESS=$(jq -r ".\"${STRATEGY_NAME}-accountingToken-implementation\"" "$DEPLOYMENT_FILE")
 FLEX_STRATEGY_ADDRESS=$(jq -r ".\"${STRATEGY_NAME}-implementation\"" "$DEPLOYMENT_FILE")
-REWARDS_SWEEPER_ADDRESS=$(jq -r ".\"${STRATEGY_NAME}-rewardsSweeper-implementation\"" "$DEPLOYMENT_FILE")
 
 # Verify contracts
 forge verify-bytecode --etherscan-api-key "$ETHERSCAN_API_KEY" "$ACCOUNTING_MODULE_ADDRESS" AccountingModule:AccountingModule --rpc-url "$RPC_URL"
 
-forge verify-bytecode --etherscan-api-key "$ETHERSCAN_API_KEY" "$ACCOUNTING_TOKEN_ADDRESS" AccountingToken:AccountingToken --rpc-url "$RPC_URL"
+forge verify-bytecode --etherscan-api-key "$ETHERSCAN_API_KEY" "$ACCOUNTING_TOKEN_ADDRESS" AccountingToken:AccountingToken --constructor-args 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 --rpc-url "$RPC_URL"
 
-forge verify-bytecode --etherscan-api-key "$ETHERSCAN_API_KEY" "$FLEX_STRATEGY_ADDRESS" FlexStrategy:FlexStrategy --rpc-url "$RPC_URL"
-
-forge verify-bytecode --etherscan-api-key "$ETHERSCAN_API_KEY" "$REWARDS_SWEEPER_ADDRESS" RewardsSweeper:RewardsSweeper --rpc-url "$RPC_URL"
 
