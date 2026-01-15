@@ -1,0 +1,19 @@
+{
+  "admin": "0xfcad670592a3b24869C0b51a6c6FDED4F95D6975",
+  "baseAsset": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+  "deployer": "0xc5e7B22d3B8498C90C0c8ba683469670689667e7",
+  "rateProvider": "0x04C3aE3BDf9E826952086C6719b3E0Df58261930",
+  "safe": "0xc6Df49362B2151eB316Cdbc6c416A2C2852E6f4E",
+  "symbol": "ynFlex-USDC-ynUSDx-ARB1",
+  "timelock": "0x1FAf90981E55882F99efB989a7E7CCC4A60CcB01",
+  "useRewardsSweeper": false,
+  "ynFlex-USDC-ynUSDx-ARB1-accountingModule-implementation": "0x6916b091E424Eb39c8817aECe8871e89e562b6C6",
+  "ynFlex-USDC-ynUSDx-ARB1-accountingModule-proxy": "0xeE9E070cAb68B131D1ee406fD4083Cc6e9C9a7aC",
+  "ynFlex-USDC-ynUSDx-ARB1-accountingModule-proxyAdmin": "0x3293b9E1b7e0E645A21b80EBB050368f2c2a8528",
+  "ynFlex-USDC-ynUSDx-ARB1-accountingToken-implementation": "0x32bbb97213F527Bdf397b6116ef53Ac187DC5699",
+  "ynFlex-USDC-ynUSDx-ARB1-accountingToken-proxy": "0x14fF6d043f65DB35dA9A2A732059F2532AFA5f7C",
+  "ynFlex-USDC-ynUSDx-ARB1-accountingToken-proxyAdmin": "0xB645A3D2367Dd656dAa5e9ecF8004EddA4cCEEdf",
+  "ynFlex-USDC-ynUSDx-ARB1-implementation": "0x1147620546FB89359d4802Ba73b594491672D934",
+  "ynFlex-USDC-ynUSDx-ARB1-proxy": "0x360b2ba897dbEa77A39A93d9181597f9c2fdD9D3",
+  "ynFlex-USDC-ynUSDx-ARB1-proxyAdmin": "0xa597a04C5AAEc267a4B9b106E7eE2BdCbAFa6b81"
+}
